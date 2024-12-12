@@ -56,22 +56,6 @@
 
 Codes and models will be released soon.
 
-## 🔧 Installation
-```
-git clone https://github.com/jh-yi/Video-Panda.git
-cd Video-Panda
-conda create -n video_panda python=3.10 -y
-conda activate video_panda
-
-pip install --upgrade pip
-pip install -e .
-pip install -e ".[train]"
-pip install flash-attn --no-build-isolation
-```
-
-## 🗝️ Training & Validating
-The training & validating instruction is in [TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md).
-
 ## ❤️ Acknowledgements
 Our code is based on [Video-LLaVA](https://github.com/PKU-YuanGroup/Video-LLaVA) and [EVE](https://github.com/baaivision/EVE) repositories. We thank the authors for releasing their code. If you use our model, please consider citing these works as well.
 
