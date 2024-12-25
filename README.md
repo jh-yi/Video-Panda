@@ -65,7 +65,7 @@ If you find our work, this repository, or pretrained models useful, please consi
 @article{yi2024video-panda,
     author    = {Jinhui Yi and Syed Talal Wasim and Yanan Luo and Muzammal Naseer and Juergen Gall},
     title     = {Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models},
-    journal   = {arXiv preprint, arXiv:},
+    journal   = {arXiv preprint, arXiv:2412.18609},
     year      = {2024},
 }
 ```
