@@ -1,8 +1,8 @@
 # <img src="figs/logo.png" style="vertical-align: -10px;" :height="45px" width="45px"> Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models
 
-[Jinhui Yi](https://scholar.google.com/citations?user=kLZxzzUAAAAJ&hl=en),
-[Syed Talal Wasim](https://talalwasim.github.io),
-[Yanan Luo](https://scholar.google.com/citations?user=yuDQY0YAAAAJ&hl=en),
+[Jinhui Yi*](https://scholar.google.com/citations?user=kLZxzzUAAAAJ&hl=en),
+[Syed Talal Wasim*](https://talalwasim.github.io),
+[Yanan Luo*](https://scholar.google.com/citations?user=yuDQY0YAAAAJ&hl=en),
 [Muzammal Naseer](https://muzammal-naseer.netlify.app/),
 [Juergen Gall](https://pages.iai.uni-bonn.de/gall_juergen/)
 
@@ -63,7 +63,7 @@ Our code is based on [Video-LLaVA](https://github.com/PKU-YuanGroup/Video-LLaVA)
 If you find our work, this repository, or pretrained models useful, please consider giving a star ⭐ and citation 📝.
 ```bibtex
 @article{yi2024video-panda,
-    author    = {Jinhui Yi and Syed Talal Wasim and Yanan Luo and Muzammal Naseer and Juergen Gall},
+    author    = {Jinhui Yi* and Syed Talal Wasim* and Yanan Luo* and Muzammal Naseer and Juergen Gall},
     title     = {Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models},
     journal   = {arXiv preprint, arXiv:2412.18609},
     year      = {2024},
