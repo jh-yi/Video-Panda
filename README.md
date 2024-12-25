@@ -26,7 +26,7 @@
 
 ## 🚀 News
 * **(December 25, 2024)** 
-  * Paper is released. Codes and models will be released soon.
+  * Paper and codes are released. Models will be released soon.
 <hr />
 
 
