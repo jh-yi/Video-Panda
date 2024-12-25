@@ -51,7 +51,7 @@
 
 <p align="center">
   <img alt="Visualization" src="figs/vis_figure.png" width="1200"/>
-  <p align="center">Qualitative examples showing the impact of removing Frame-wise Spatial Relationship Aggregator (FSRA) and Global Spatio-Temporal Relationship Aggregator (GSTRA).</p>
+  <p align="left">Qualitative examples showing the impact of removing Frame-wise Spatial Relationship Aggregator (FSRA) and Global Spatio-Temporal Relationship Aggregator (GSTRA).</p>
 </p>
 
 ## 🔧 Installation
@@ -74,7 +74,7 @@ export PYTHONPATH="./:$PYTHONPATH"
 ```
 **Preparation**
 
-Download `EVE_model` and extract them into `BAAI/` path:
+We build our model based on [EVE](https://github.com/baaivision/EVE). Download `EVE_model` and extract them into `BAAI/` path:
 - [EVE-7B-Pretrain-v1.0](https://huggingface.co/BAAI/EVE-7B-Pretrain-v1.0)
 
 Replace the `BAAI/EVE-7B-Pretrain-v1.0/config.json` with `videopanda/config/config.json`. 
