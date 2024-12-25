@@ -7,7 +7,7 @@
 [Juergen Gall](https://pages.iai.uni-bonn.de/gall_juergen/)
 
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)]()
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2412.18609)
 <hr />
 
 > **Abstract:**
