@@ -43,7 +43,7 @@
 
 <p align="center">
   <img alt="Performance Overview" src="figs/intro_fig.png" width="600"/>
-  <p align="center">Model performance on MSVD-QA versus the model size of the visual component in logarithmic scale. The bubble size indicates the amount of finetuning data (in thousands). Models using the same training dataset as ours (100K samples) are shown in dark green, while those using different datasets are in blue.</p>
+  <p align="left">Model performance on MSVD-QA versus the model size of the visual component in logarithmic scale. The bubble size indicates the amount of finetuning data (in thousands). Models using the same training dataset as ours (100K samples) are shown in dark green, while those using different datasets are in blue.</p>
 </p>
 
 
