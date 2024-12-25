@@ -183,3 +183,4 @@ BAAI/
 logs/
 *.out
 cache_dir/
+.gitignore

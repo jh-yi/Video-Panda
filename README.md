@@ -19,7 +19,8 @@
    * [News](#-news)
    * [Overview](#-overview)
    * [Visualization](#-visualization)
-   * [Codes](#codes)
+   * [Installation](#-installation)
+   * [Training & Validating](#️-training--validating)
    * [Acknowledgements](#️-acknowledgements)
    * [Citation](#️-citation)
 <!--te-->
@@ -53,9 +54,62 @@
   <p align="center">Qualitative examples showing the impact of removing Frame-wise Spatial Relationship Aggregator (FSRA) and Global Spatio-Temporal Relationship Aggregator (GSTRA).</p>
 </p>
 
-## Codes
+## 🔧 Installation
+**Environment**
 
-Codes and models will be released soon.
+```
+git clone https://github.com/jh-yi/Video-Panda
+cd Video-Panda
+conda create -n videopanda python=3.10 -y
+conda activate videopanda
+
+pip install --upgrade pip
+pip install -e .
+pip install -e ".[train]"
+pip install flash-attn==2.6.3 --no-build-isolation
+pip install deepspeed==0.14.4 openai==0.27.8 decord mmengine line_profiler pytorchvideo easydict protobuf==3.20.3
+pip install git+https://github.com/huggingface/accelerate.git
+
+export PYTHONPATH="./:$PYTHONPATH"
+```
+**Preparation**
+
+Download `EVE_model` and extract them into `BAAI/` path:
+- [EVE-7B-Pretrain-v1.0](https://huggingface.co/BAAI/EVE-7B-Pretrain-v1.0)
+
+Replace the `BAAI/EVE-7B-Pretrain-v1.0/config.json` with `videopanda/config/config.json`. 
+
+```
+BAAI
+├── EVE-7B-Pretrain-v1.0
+│   │── config.json -> config.json
+│   │── ...
+```
+
+**Data**
+
+Video-Panda was trained with Valley-702k dataset and Video-ChatGPT-100k dataset, and was evaluated on four open-ended VideoQA datasets: MSRVTT-QA, MSVD-QA, TGIF-QA, and ActivityNet-QA. Please follow the instructions in [Video-LLaVA](https://github.com/PKU-YuanGroup/Video-LLaVA/blob/main/TRAIN_AND_VALIDATE.md) for downloading the data. 
+
+After downloading all of them, organize the data as follows in ```DATA_ROOT```. 
+
+```Shell
+DATA_ROOT
+├──train
+|  ├── train_json
+|  ├── valley
+|  └── videochatgpt_tune
+├──eval
+   └── GPT_Zero_Shot_QA
+       ├── Activitynet_Zero_Shot_QA
+       ├── MSRVTT_Zero_Shot_QA
+       ├── MSVD_Zero_Shot_QA
+       └── TGIF_Zero_Shot_QA
+```
+
+## 🗝️ Training & Validating
+
+The training & validating instruction is in [TRAIN_AND_VALIDATE.md](TRAIN_AND_VALIDATE.md).
+
 
 ## ❤️ Acknowledgements
 Our code is based on [Video-LLaVA](https://github.com/PKU-YuanGroup/Video-LLaVA) and [EVE](https://github.com/baaivision/EVE) repositories. We thank the authors for releasing their code. If you use our model, please consider citing these works as well.

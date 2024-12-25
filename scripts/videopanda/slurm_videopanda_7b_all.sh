@@ -2,7 +2,7 @@
 #SBATCH --job-name=videopanda_7b_f8_LB448_new
 #SBATCH --output=slurm-%x-%j.log
 #SBATCH --account=your_account_name
-#SBATCH --partition=your_partition_name
+#SBATCH --partition=your_account_name
 #SBATCH --time=1-00:00:00
 #SBATCH --cpus-per-task=32
 
