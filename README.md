@@ -16,13 +16,16 @@
 
 ## Table of Contents
 <!--ts-->
-   * [News](#-news)
-   * [Overview](#-overview)
-   * [Visualization](#-visualization)
-   * [Installation](#-installation)
-   * [Training & Validating](#️-training--validating)
-   * [Acknowledgements](#️-acknowledgements)
-   * [Citation](#️-citation)
+- [ Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models](#-video-panda-parameter-efficient-alignment-for-encoder-free-video-language-models)
+  - [Table of Contents](#table-of-contents)
+  - [🚀 News](#-news)
+  - [💡 Overview](#-overview)
+  - [🔍 Visualization](#-visualization)
+  - [🔧 Installation](#-installation)
+  - [🗝️ Training \& Validating](#️-training--validating)
+  - [❤️ Acknowledgements](#️-acknowledgements)
+  - [✏️ Citation](#️-citation)
+  - [🔒 License](#-license)
 <!--te-->
 
 ## 🚀 News
@@ -32,6 +35,13 @@
 
 
 ## 💡 Overview
+
+<p align="center">
+  <img alt="Existing video-language model architectures" src="figs/designs.png" width="1200"/>
+  <p align="left">Existing video-language model architectures.</p>
+</p>
+
+<hr />
 
 <p align="center">
   <img alt="Overall Architecture" src="figs/main_arch.png" width="1200"/>
