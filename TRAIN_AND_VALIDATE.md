@@ -2,11 +2,25 @@
 
 ## Training
 Specify your `DATA_ROOT` according to the data preparation.
-- Stage 1 prealignment script: [videopanda_prealign.sh](scripts/videopanda/videopanda_prealign.sh). 
+- Stage 1 prealignment script: [videopanda_prealign.sh](scripts/videopanda/videopanda_prealign.sh).
+    ```Shell
+    bash scripts/videopanda/videopanda_prealign.sh ${node_rank} ${master_addr}
+    # e.g. if you work with single node, please set NNODES as 1, and then:
+    # bash scripts/videopanda/videopanda_prealign.sh 0 localhost
+    ```
 - Stage 2 pretraining script: [videopanda_pretrain.sh](scripts/videopanda/videopanda_pretrain.sh). 
-- Stage 3 tuning script: [videopanda_finetune.sh](scripts/videopanda/videopanda_finetune.sh).
-
-For slurm user (with multiple nodes), you can also use [slurm_sbatch_launcher.sh](scripts/videopanda/slurm_sbatch_launcher.sh) and [slurm_videopanda_7b_all.sh](scripts/videopanda/slurm_videopanda_7b_all.sh) to run three stages at a time. Please specify your `EXPNAME` and `job-name`, `account`, `partition`, `DATA_ROOT` in both scripts respectively. 
+    ```Shell
+    bash scripts/videopanda/videopanda_pretrain.sh ${node_rank} ${master_addr}
+    ```
+- Stage 3 finetuning script: [videopanda_finetune.sh](scripts/videopanda/videopanda_finetune.sh).
+    ```Shell
+    bash scripts/videopanda/videopanda_finetune.sh ${node_rank} ${master_addr}
+    ```
+For slurm user (with multiple nodes), you can also use [slurm_sbatch_launcher.sh](scripts/videopanda/slurm_sbatch_launcher.sh) and [slurm_videopanda_7b_all.sh](scripts/videopanda/slurm_videopanda_7b_all.sh) to run three stages at a time. Please specify your `EXPNAME`, and `job-name`, `account`, `partition`, `DATA_ROOT` in both scripts respectively (Note: `EXPNAME` and `job-name` should be the same).
+```Shell
+bash scripts/videopanda/slurm_sbatch_launcher.sh
+```
+FYI: The training with 32xA100-64GB GPUs takes around 14h (16x=25h, 64x=7h).
 
 ## Validating
 Our video validation code comes from Video-ChatGPT, thanks for their contribution! 

@@ -55,6 +55,9 @@ Video-Panda is an encoder-free video conversation model that directly processes 
 
 **1. Prepare the code and the environment**
 
+* Python >= 3.10
+* Pytorch == 2.1.0
+* CUDA Version >= 11.7 (we use 12.1)
 ```
 git clone https://github.com/jh-yi/Video-Panda
 cd Video-Panda
@@ -83,8 +86,12 @@ checkpoints
 │   │── config.json -> config.json
 │   │── ...
 └── Video-Panda-7B
-    │── config.json
-    │── ...
+    │── videopanda_fitu
+    │   │── config.json
+    │   │── ...
+    └── videopanda_prtr1
+        │── config.json
+        │── ...
 ```
 
 **3. Prepare the datasets**
@@ -96,9 +103,9 @@ After downloading all of them, organize the data as follows in ```DATA_ROOT```.
 ```Shell
 DATA_ROOT
 ├── train
-|  ├── train_json
-|  ├── valley
-|  └── videochatgpt_tune
+│  ├── train_json
+│  ├── valley
+│  └── videochatgpt_tune
 └── eval
    └── GPT_Zero_Shot_QA
        ├── Activitynet_Zero_Shot_QA
