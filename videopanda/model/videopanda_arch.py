@@ -46,6 +46,8 @@ class VideoPandaMetaModel:
             if config.requires_image_distill:
                 if 'LanguageBind' in config.mm_vision_tower_teacher:
                     self.image_teacher = build_image_tower(config, delay_load=True)
+                else:
+                    raise NotImplementedError
                 self.image_teacher.requires_grad_(False)
                 self.vision_tower_compressor = VisionCompressor(self.image_teacher, 
                                                                 self.vision_tower.image_processor,
@@ -151,30 +153,10 @@ class VideoPandaMetaModel:
         # ==========================================================================
 
         if model_args.requires_image_distill:
-            if getattr(self, 'image_teacher', None) is None:
-                self.image_teacher = build_image_tower(model_args, delay_load=True)
-                self.image_teacher.requires_grad_(False)
-
-            if getattr(self, 'vision_tower_compressor', None) is None:
-                self.vision_tower_compressor = VisionCompressor(self.image_teacher,
-                                                                self.vision_tower.image_processor,
-                                                                llm_size=self.config.hidden_size, 
-                                                                num_layer=self.config.num_hidden_layers)
             if 'LanguageBind' in model_args.vision_tower_teacher:
                 self.image_teacher.load_model()
 
-        if model_args.requires_video_distill:
-            if getattr(self, 'video_teacher', None) is None:
-                self.video_teacher = build_video_tower(model_args, delay_load=True)
-                self.video_teacher.requires_grad_(False)
-
-            if getattr(self, 'video_tower_compressor', None) is None:
-                self.video_tower_compressor = VideoCompressor(self.video_teacher, 
-                                                                self.video_tower.image_processor,
-                                                                llm_size=self.config.hidden_size, 
-                                                                num_layer=self.config.num_hidden_layers,
-                                                                chunk_size=model_args['num_frames'])
-            
+        if model_args.requires_video_distill:    
             if 'LanguageBind' in model_args.video_tower_teacher:
                 self.video_teacher.load_model()
 
@@ -427,7 +409,7 @@ class VideoPandaMetaForCausalLM(ABC):
 
         return None, attention_mask, past_key_values, new_input_embeds, new_labels, patch_hws, tmp_feature_lens
 
-    # TODO
+    # deprecated
     def initialize_vision_tokenizer(self, model_args, tokenizer):
         if model_args.mm_use_im_patch_token:
             tokenizer.add_tokens([DEFAULT_IMAGE_PATCH_TOKEN], special_tokens=True)

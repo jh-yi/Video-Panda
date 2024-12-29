@@ -2,7 +2,7 @@
 
 # save a copy of source files before slurm schedule, and run the code using submitted version. 
 
-export EXPNAME=videopanda_7b_f8_LB448_new
+export EXPNAME=videopanda_7b
 export PYTHONPATH_PROJECT=$(pwd)
 echo "Project root: ${PYTHONPATH_PROJECT}"
 

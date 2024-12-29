@@ -16,7 +16,7 @@ set -x
 # ################## Please Edit Here #########################
 
 # module load cuda/12.1
-export EXPNAME=videopanda_7b_f8_LB448_new   #  8 frames, LanguageBind, 448x448
+export EXPNAME=videopanda_7b
 export RANDSEED=42
 export DATA_ROOT=/path/to/data_root         # e.g. /home/username/datasets/Video-LLaVA
 
@@ -38,7 +38,7 @@ export VIDEO_PATH_TEACHER=LanguageBind/LanguageBind_Video_merge
 export BASE_LR=4e-5
 export LEARNIG_RATE=4e-4
 
-export CKPT_PATH=BAAI/EVE-7B-Pretrain-v1.0
+export CKPT_PATH=checkpoints/EVE-7B-Pretrain-v1.0
 export SAVE_PATH=${EXPNAME}/videopanda_prtr0
 echo "ckpt: ${CKPT_PATH}, save: ${SAVE_PATH}"
 
@@ -55,7 +55,7 @@ torchrun --nproc_per_node=$GPUS_PER_NODE --nnode=$NNODES --node_rank=$1 --master
     --image_folder ${IMAGE_FOLDER} \
     --vision_tower ${VIT_PATH} \
     --vision_tower_teacher ${VIT_PATH_TEACHER} \
-    --requires_image_distill True \
+    --requires_image_distill False \
     --video_folder ${VIDEO_FOLDER} \
     --video_tower ${VIDEO_PATH} \
     --video_tower_teacher ${VIDEO_PATH_TEACHER} \

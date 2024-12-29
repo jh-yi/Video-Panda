@@ -1,7 +1,7 @@
 # bash scripts/videopanda/eval/eval_qa_msvd.sh
 
 # module load cuda/12.1
-output_name=videopanda_7b_f8_LB448/videopanda_fitu
+output_name=Video-Panda-7B/videopanda_fitu
 GPT_Zero_Shot_QA="/path/to/data_root/eval/GPT_Zero_Shot_QA" # e.g. /home/username/datasets/Video-LLaVA/eval/GPT_Zero_Shot_QA
 
 

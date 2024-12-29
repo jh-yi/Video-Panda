@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=videopanda_7b_f8_LB448_new
+#SBATCH --job-name=videopanda_7b
 #SBATCH --output=slurm-%x-%j.log
 #SBATCH --account=your_account_name
 #SBATCH --partition=your_account_name
@@ -54,8 +54,6 @@ set -x
 # run previous saved copy of source files (submitted version) instead of current version. 
 if [[ ${EXPNAME} != *"debug"* ]]; then
     cd ${PYTHONPATH_PROJECT}/checkpoints/${EXPNAME}/src_files
-    # ln -s ${PYTHONPATH_PROJECT}/OpenGVLab .
-    ln -s ${PYTHONPATH_PROJECT}/BAAI .
     ln -s ${PYTHONPATH_PROJECT}/cache_dir .
     # ln -s ${PYTHONPATH_PROJECT}/lmsys .
 else
@@ -81,7 +79,7 @@ export VIDEO_PATH_TEACHER=LanguageBind/LanguageBind_Video_merge
 export BASE_LR=4e-5
 export LEARNIG_RATE=4e-4
 
-export CKPT_PATH=BAAI/EVE-7B-Pretrain-v1.0
+export CKPT_PATH=${PYTHONPATH_PROJECT}/checkpoints/EVE-7B-Pretrain-v1.0
 export SAVE_PATH=${EXPNAME}/videopanda_prtr0
 echo "ckpt: ${CKPT_PATH}, save: ${SAVE_PATH}"
 
@@ -98,7 +96,7 @@ srun --cpus-per-task=${SLURM_CPUS_PER_TASK} torchrun --nnodes=$SLURM_NNODES --np
     --image_folder ${IMAGE_FOLDER} \
     --vision_tower ${VIT_PATH} \
     --vision_tower_teacher ${VIT_PATH_TEACHER} \
-    --requires_image_distill True \
+    --requires_image_distill False \
     --video_folder ${VIDEO_FOLDER} \
     --video_tower ${VIDEO_PATH} \
     --video_tower_teacher ${VIDEO_PATH_TEACHER} \
@@ -160,7 +158,7 @@ srun --cpus-per-task=${SLURM_CPUS_PER_TASK} torchrun --nnodes=$SLURM_NNODES --np
     --image_folder ${IMAGE_FOLDER} \
     --vision_tower ${VIT_PATH} \
     --vision_tower_teacher ${VIT_PATH_TEACHER} \
-    --requires_image_distill True \
+    --requires_image_distill False \
     --video_folder ${VIDEO_FOLDER} \
     --video_tower ${VIDEO_PATH} \
     --video_tower_teacher ${VIDEO_PATH_TEACHER} \
@@ -217,7 +215,7 @@ srun --cpus-per-task=${SLURM_CPUS_PER_TASK} torchrun --nnodes=$SLURM_NNODES --np
     --image_folder ${IMAGE_FOLDER} \
     --vision_tower ${VIT_PATH} \
     --vision_tower_teacher ${VIT_PATH_TEACHER} \
-    --requires_image_distill True \
+    --requires_image_distill False \
     --video_folder ${VIDEO_FOLDER} \
     --video_tower ${VIDEO_PATH} \
     --video_tower_teacher ${VIDEO_PATH_TEACHER} \
@@ -262,7 +260,5 @@ date
 
 mv ${PYTHONPATH_PROJECT}/slurm-${SLURM_JOB_NAME}-${SLURM_JOB_ID}.log ${PYTHONPATH_PROJECT}/checkpoints/${EXPNAME}/${STARTTIME}.log
 
-# unlink OpenGVLab
-unlink BAAI
 unlink cache_dir
 # unlink lmsys

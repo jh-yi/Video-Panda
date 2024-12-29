@@ -15,14 +15,14 @@ classifiers = [
 dependencies = [
     "torch==2.1.0", "torchvision==0.16.0",
     "transformers==4.31.0", "tokenizers>=0.12.1,<0.14", "sentencepiece==0.1.99", "shortuuid",
-    "accelerate==0.21.0", "peft==0.4.0", "bitsandbytes==0.41.0", "xformers==0.0.21",
-    "markdown2[all]", "numpy", "scikit-learn==1.2.2", "urllib3==1.26.0",
+    "peft==0.4.0", "bitsandbytes==0.41.0", "deepspeed==0.14.4", "openai==0.27.8", 
+    "markdown2[all]", "numpy", "scikit-learn==1.2.2", "urllib3==1.26.0", "protobuf==3.20.3",
     "gradio==4.5.0", "requests", "httpx==0.24.0", "uvicorn", "fastapi","ftfy",
-    "einops==0.6.1", "einops-exts==0.0.4", "timm==0.6.13", "prettytable", "openpyxl"
+    "einops==0.6.1", "einops-exts==0.0.4", "timm==0.6.13", "prettytable", "openpyxl", "decord", "mmengine", "pytorchvideo", "easydict"
 ]
 
 [project.optional-dependencies]
-train = ["deepspeed", "ninja", "wandb", "tensorboardX"]
+train = ["ninja", "wandb", "tensorboardX"]
 
 [project.urls]
 "Homepage" = "https://videopanda.github.io/"

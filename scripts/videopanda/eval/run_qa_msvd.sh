@@ -1,7 +1,7 @@
 # CUDA_VISIBLE_DEVICES=0,1,2,3 bash scripts/videopanda/eval/run_qa_msvd.sh
 
 # module load cuda/12.1
-CKPT_NAME=videopanda_7b_f8_LB448/videopanda_fitu
+CKPT_NAME=Video-Panda-7B/videopanda_fitu
 GPT_Zero_Shot_QA="/path/to/data_root/eval/GPT_Zero_Shot_QA" # e.g. /home/username/datasets/Video-LLaVA/eval/GPT_Zero_Shot_QA
 
 

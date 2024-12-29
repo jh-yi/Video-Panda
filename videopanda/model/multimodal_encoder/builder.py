@@ -5,7 +5,6 @@ from .languagebind import LanguageBindImageTower, LanguageBindVideoTower
 
 def build_image_tower(image_tower_cfg, **kwargs):
     image_tower = getattr(image_tower_cfg, 'mm_vision_tower_teacher', getattr(image_tower_cfg, 'image_tower', None))
-    is_absolute_path_exists = os.path.exists(image_tower)
     if image_tower.endswith('LanguageBind_Image'):
         return LanguageBindImageTower(image_tower, args=image_tower_cfg, cache_dir='./cache_dir', **kwargs)
 
