@@ -57,7 +57,7 @@ Video-Panda is an encoder-free video conversation model that directly processes 
 
 * Python >= 3.10
 * Pytorch == 2.1.0
-* CUDA Version >= 11.7 (we use 12.1)
+* CUDA Version >= 11.7
 ```
 git clone https://github.com/jh-yi/Video-Panda
 cd Video-Panda

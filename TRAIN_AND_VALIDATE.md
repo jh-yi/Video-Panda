@@ -20,12 +20,11 @@ For slurm user (with multiple nodes), you can also use [slurm_sbatch_launcher.sh
 ```Shell
 bash scripts/videopanda/slurm_sbatch_launcher.sh
 ```
-FYI: The training with 32xA100-64GB GPUs takes around 14h (16x=25h, 64x=7h).
 
 ## Validating
 Our video validation code comes from Video-ChatGPT, thanks for their contribution! 
 
-You can refer to the official repository for validation, but we also provide [off-the-shelf](scripts/videopanda/eval) scripts. Please specify your `CKPT_NAME` and `GPT_Zero_Shot_QA` in each script. 
+You can refer to the official repository for validation, but we also provide [off-the-shelf](scripts/videopanda/eval) scripts. Please specify your `CKPT_NAME` and `GPT_Zero_Shot_QA` in each script, and your `api_key` for GPT-Assistant evaluation. Note that the GPT-Assistant evaluation depends on the current version of GPT3.5 which changes over time. 
 
 ### MSRVTT-QA
 1. Inference to get the result.

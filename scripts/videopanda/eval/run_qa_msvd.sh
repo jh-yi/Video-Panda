@@ -5,7 +5,7 @@ CKPT_NAME=Video-Panda-7B/videopanda_fitu
 GPT_Zero_Shot_QA="/path/to/data_root/eval/GPT_Zero_Shot_QA" # e.g. /home/username/datasets/Video-LLaVA/eval/GPT_Zero_Shot_QA
 
 
-model_path="checkpoints/new/${CKPT_NAME}"
+model_path="checkpoints/${CKPT_NAME}"
 cache_dir="./cache_dir"
 video_dir="${GPT_Zero_Shot_QA}/MSVD_Zero_Shot_QA/videos"
 gt_file_question="${GPT_Zero_Shot_QA}/MSVD_Zero_Shot_QA/test_q.json"

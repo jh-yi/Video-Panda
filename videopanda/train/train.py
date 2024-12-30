@@ -40,6 +40,8 @@ from videopanda.model.dataloader import _get_rawvideo_dec
 import sys
 from videopanda.utils import save_source
 from torchvision.transforms.functional import pil_to_tensor
+from transformers.modeling_utils import load_state_dict, _load_state_dict_into_model
+import gc
 
 local_rank = None
 
@@ -1126,6 +1128,42 @@ def train():
             **bnb_model_from_pretrained_args
         )
     model.config.use_cache = False
+
+    # partially load ckpt from EVE
+    error_msgs = []
+    if data_args.data_stage == 'prealign' and model.model.video_tower.patch_embedding.out_channels == 1024:
+        key_mapping = {'vision_tower': 'video_tower', 'mm_projector': 'video_projector', 'vision_tower_compressor': 'video_tower_compressor'}
+
+        resolved_archive_file = [os.path.join(model_args.model_name_or_path, 'pytorch_model-00002-of-00002.bin'),] # 'checkpoints/EVE-7B-Pretrain-v1.0/pytorch_model-00002-of-00002.bin'
+        for shard_file in resolved_archive_file:
+            state_dict = load_state_dict(shard_file)
+
+            new_state_dict = {}
+            for key in list(state_dict.keys()):
+                tmp_key = key.split('.')[1]
+                if tmp_key in list(key_mapping.keys()) and 'clip' not in key:   # ignore weights of the CLIP model
+                    value = state_dict[key]
+                    key = key.replace(tmp_key, key_mapping[tmp_key])
+                    new_state_dict[key] = value
+            new_keys = list(new_state_dict.keys())
+            # print("New keys: ", new_keys)
+
+            model_state_dict = model.state_dict()
+            expected_keys = list(model_state_dict.keys())
+            expected_keys = [k for k in expected_keys if (k.split('.')[1] in list(key_mapping.values()) and 'teacher' not in k)]
+            # print("Expected: ", list(expected_keys.keys()))
+
+            assert set(new_keys).issubset(expected_keys)
+
+            start_prefix = ''
+            error_msgs += _load_state_dict_into_model(model, new_state_dict, start_prefix)
+
+            # force memory release
+            del state_dict
+            del new_state_dict
+            gc.collect()
+            print(error_msgs)
+            print("Partially loaded from EVE!")
 
     if model_args.freeze_backbone:
         model.model.requires_grad_(False)
