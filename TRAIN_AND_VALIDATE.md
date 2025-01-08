@@ -16,7 +16,7 @@ Specify your `DATA_ROOT` according to the data preparation.
     ```Shell
     bash scripts/videopanda/videopanda_finetune.sh ${node_rank} ${master_addr}
     ```
-For slurm user (with multiple nodes), you can also use [slurm_sbatch_launcher.sh](scripts/videopanda/slurm_sbatch_launcher.sh) and [slurm_videopanda_7b_all.sh](scripts/videopanda/slurm_videopanda_7b_all.sh) to run three stages at a time. Please specify your `EXPNAME`, and `job-name`, `account`, `partition`, `DATA_ROOT` in both scripts respectively (Note: `EXPNAME` and `job-name` should be the same).
+For slurm user (with multiple nodes), you can also use [slurm_sbatch_launcher.sh](scripts/videopanda/slurm_sbatch_launcher.sh) and [slurm_videopanda_7b_all.sh](scripts/videopanda/slurm_videopanda_7b_all.sh) to run three stages at a time. Please specify your `EXPNAME`, and `job-name`, `account`, `partition`, `your_email`, `DATA_ROOT` in both scripts respectively (Note: `EXPNAME` and `job-name` should be the same).
 ```Shell
 bash scripts/videopanda/slurm_sbatch_launcher.sh
 ```

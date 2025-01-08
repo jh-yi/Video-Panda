@@ -72,7 +72,7 @@ pip install git+https://github.com/huggingface/accelerate.git
 
 export PYTHONPATH="$PYTHONPATH:."
 ```
-**2. Prepare the pretrained model checkpoints and configs**
+**2. Prepare the pretrained models and configs**
 
 We train our model based on [EVE](https://github.com/baaivision/EVE). Download [EVE-7B-Pretrain-v1.0](https://huggingface.co/BAAI/EVE-7B-Pretrain-v1.0) and extract them into `checkpoints/` path. Replace the `checkpoints/EVE-7B-Pretrain-v1.0/config.json` with `videopanda/config/config.json`. 
 
