@@ -3,7 +3,7 @@
 [Jinhui Yi*](https://scholar.google.com/citations?user=kLZxzzUAAAAJ&hl=en),
 [Syed Talal Wasim*](https://talalwasim.github.io),
 [Yanan Luo*](https://scholar.google.com/citations?user=yuDQY0YAAAAJ&hl=en),
-[Muzammal Naseer](https://muzammal-naseer.netlify.app/),
+[Muzammal Naseer](https://muzammal-naseer.com),
 [Juergen Gall](https://pages.iai.uni-bonn.de/gall_juergen/)
 
 *Equal Contribution
