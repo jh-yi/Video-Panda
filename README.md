@@ -1,4 +1,4 @@
-# <img src="figs/logo.png" style="vertical-align: -10px;" :height="40px" width="40px"> Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models
+# <img src="figs/logo.png" style="vertical-align: -10px;" :height="40px" width="40px"> Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models [CVPR 2025]
 
 [Jinhui Yi*](https://scholar.google.com/citations?user=kLZxzzUAAAAJ&hl=en),
 [Syed Talal Wasim*](https://talalwasim.github.io),
