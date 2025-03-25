@@ -1,5 +1,5 @@
 # Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models
-This is the source code for the [Video-Panda Website](https://jh-yi.github.io/videopanda/).
+This is the source code for the [Video-Panda Website](https://jh-yi.github.io/Video-Panda).
 
 
 ## ✏️ Citation
