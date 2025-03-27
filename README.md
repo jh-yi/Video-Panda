@@ -123,7 +123,7 @@ The training & validating instruction is in [TRAIN_AND_VALIDATE.md](TRAIN_AND_VA
 ## ❤️ Acknowledgements
 Our code is based on [Video-LLaVA](https://github.com/PKU-YuanGroup/Video-LLaVA) and [EVE](https://github.com/baaivision/EVE) repositories. We thank the authors for releasing their code. If you use our model, please consider citing these works as well.
 
-This work was supported by the Federal Ministry of Education and Research (BMBF) under grant no.\ 01IS22094A WEST-AI and the ERC Consolidator Grant FORHUE (101044724). For the computations involved in this research, we acknowledge EuroHPC Joint Undertaking for awarding us access to Leonardo at CINECA, Italy, through EuroHPC Regular Access Call - proposal No.\ EHPC-REG-2024R01-076. 
+This work was supported by the Federal Ministry of Education and Research (BMBF) under grant no.\ 01IS22094A WEST-AI and the ERC Consolidator Grant FORHUE (101044724). For the computations involved in this research, we acknowledge EuroHPC Joint Undertaking for awarding us access to Leonardo at CINECA, Italy, through EuroHPC Regular Access Call - proposal No. EHPC-REG-2024R01-076. 
 
 ## ✏️ Citation
 If you find our work, this repository, or pretrained models useful, please consider giving a star ⭐ and citation 📝.
