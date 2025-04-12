@@ -128,11 +128,11 @@ This work was supported by the Federal Ministry of Education and Research (BMBF)
 ## ✏️ Citation
 If you find our work, this repository, or pretrained models useful, please consider giving a star ⭐ and citation 📝.
 ```bibtex
-@article{yi2024video-panda,
+@inproceedings{yi2024video-panda,
     author    = {Jinhui Yi* and Syed Talal Wasim* and Yanan Luo* and Muzammal Naseer and Juergen Gall},
     title     = {Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models},
-    journal   = {arXiv preprint, arXiv:2412.18609},
-    year      = {2024},
+    journal   = {CVPR},
+    year      = {2025},
 }
 ```
 
