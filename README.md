@@ -140,4 +140,4 @@ If you find our work, this repository, or pretrained models useful, please consi
 The content of this project is released under the Apache License 2.0 as found in the [LICENSE](https://github.com/jh-yi/Video-Panda/blob/main/LICENSE) file.
 
 ---
-If you have any questions, please create an issue on this repository or contact at jinhui.yi@uni-bonn.de and swasim@uni-bonn.de.
+If you have any questions, please create an issue on this repository or contact at jinhui.yi@uni-bonn.de and swasim@uni-bonn.de, yluo@uni-bonn.de.
